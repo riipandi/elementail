@@ -1,8 +1,10 @@
-name: CI
+name: Publish Website
 
 on:
   push:
-    branches: [main]
+    branches: ['main']
+  pull_request:
+    types: [opened, synchronize]
 
 # Cancel in progress workflows on pull_requests.
 # https://docs.github.com/en/actions/using-jobs/using-concurrency#example-using-a-fallback-value
