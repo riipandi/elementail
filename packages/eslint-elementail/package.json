@@ -1,7 +1,7 @@
 {
   "name": "@elementail/eslint-config",
   "description": "ESLint preset used throughout the monorepo",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "main": "index.js",
   "license": "MIT",
   "dependencies": {

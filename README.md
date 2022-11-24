@@ -66,7 +66,7 @@ tsup src/index.tsx --format esm,cjs --dts --external react
 ```json:elementail-core/package.json
 {
   "name": "@elementail/hooks",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",

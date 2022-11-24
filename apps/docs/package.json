@@ -1,6 +1,6 @@
 {
   "name": "@elementail/docs",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "private": true,
   "scripts": {
     "dev": "start-storybook -p 4400",
