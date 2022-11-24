@@ -66,6 +66,13 @@ jobs:
           pnpm run build
           pnpm run export
 
+      - name: Save Next.js artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: website-artifact
+          path: apps/website/.next
+          if-no-files-found: error
+
       - name: Configure Github Pages
         run: |
           touch ./apps/website/out/{.nojekyll,CNAME}
