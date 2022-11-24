@@ -1,6 +1,10 @@
 {
   "name": "tailwind-config",
   "version": "0.0.5",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/riipandi/elementail"
+  },
   "private": true,
   "main": "index.js",
   "devDependencies": {

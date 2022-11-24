@@ -1,6 +1,10 @@
 {
   "name": "@elementail/utils",
   "version": "0.0.5",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/riipandi/elementail"
+  },
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
