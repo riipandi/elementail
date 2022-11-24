@@ -27,7 +27,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Setup PNPM
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@v3
         with:
           version: 7
           run_install: false
@@ -49,8 +49,8 @@ jobs:
       - if: ${{ steps.cache-pnpm.outputs.cache-hit != 'true' }}
         name: Deps install and build
         run: |
-          pnpm install
-          pnpm export
+          pnpm install --frozen-lockfile
+          pnpm run export
 
       - name: Configuring Github Pages
         run: |
