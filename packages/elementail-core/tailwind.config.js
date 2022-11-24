@@ -9,10 +9,10 @@ module.exports = {
         sans: ['Inter', ...defaultTheme.fontFamily.sans]
       },
       colors: ({ colors }) => ({
-        primary: colors.blue,
-        secondary: colors.rose,
+        primary: colors.teal,
+        secondary: colors.indigo,
         success: colors.green,
-        danger: colors.red,
+        danger: colors.rose,
         warning: colors.yellow,
         info: colors.sky,
         light: colors.white,
