@@ -1,4 +1,4 @@
-name: '🐛 Bug report'
+name: '🐞 Bug report'
 description: Report a reproducible bug or regression
 body:
   - type: markdown
@@ -31,7 +31,7 @@ body:
         Please add a link to a minimal reproduction.
         Note:
         - Your bug may get fixed much faster if we can run your code and it doesn't have dependencies other than Next.js.
-        - To create a shareable code example for web, you can use CodeSandbox (https://codesandbox.io/s/new) or Stackblitz (https://stackblitz.com/).
+        - To create a shareable code example for web, you can use CodeSandbox (https://codesandbox.io/s/new) or Stackblitz (https://stackblitz.com).
         - Please make sure the example is complete and runnable
         - Feel free to fork any of the official CodeSandbox examples to reproduce your issue: https://github.com/riipandi/elementail/tree/main/examples/nextv12
         - Please read these tips for providing a minimal example: https://stackoverflow.com/help/mcve.
