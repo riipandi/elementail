@@ -30,7 +30,11 @@ import { Button } from '@elementail/core'
 ## Primary Button
 
 <Canvas columns={2} withSource='close'>
-  <Story name='Primary Button' args={{ variant: 'primary' }} parameters={{ badges: ['core', BADGE.STABLE] }}>
+  <Story
+    name='Primary Button'
+    args={{ variant: 'primary' }}
+    parameters={{ badges: ['core', BADGE.STABLE] }}
+  >
     {Template.bind({})}
   </Story>
 </Canvas>
@@ -38,7 +42,11 @@ import { Button } from '@elementail/core'
 ## Secondary Button
 
 <Canvas columns={2} withSource='close'>
-  <Story name='Secondary Button' args={{ variant: 'secondary' }} parameters={{ badges: ['core',BADGE.BETA] }}>
+  <Story
+    name='Secondary Button'
+    args={{ variant: 'secondary' }}
+    parameters={{ badges: ['core', BADGE.BETA] }}
+  >
     {Template.bind({})}
   </Story>
 </Canvas>
