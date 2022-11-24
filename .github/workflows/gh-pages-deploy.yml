@@ -57,6 +57,7 @@ jobs:
         name: Install dependencies
         run: |
           pnpm install --frozen-lockfile
+          pnpm run build
           pnpm run export
 
       - if: ${{ steps.cache-nextjs.outputs.cache-hit != 'true' }}
@@ -66,10 +67,9 @@ jobs:
 
       - name: Configure Github Pages
         run: |
-          touch ./apps/website/out/.nojekyll
-          touch ./apps/website/out/CNAME
+          touch ./apps/website/out/{.nojekyll,CNAME}
           echo 'elementail.js.org' > ./apps/website/out/CNAME
-          cp -r ./apps/docs/storybook-static/* ./apps/website/out/storybook/.
+          mv ./apps/docs/storybook-static ./apps/website/out/storybook
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
