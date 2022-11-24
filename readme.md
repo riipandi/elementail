@@ -145,7 +145,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl ege
 
 This example includes a few helpful Storybook scripts:
 
--   `yarn dev`: Starts Storybook in dev mode with hot reloading at `localhost:6006`
+-   `yarn dev`: Starts Storybook in dev mode with hot reloading at `localhost:4400`
 -   `yarn build`: Builds the Storybook UI and generates the static HTML files
 -   `yarn preview-storybook`: Starts a local server to view the generated Storybook UI
 
