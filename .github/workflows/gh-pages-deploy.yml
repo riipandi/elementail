@@ -30,29 +30,25 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Setup PNPM Package Manager
-        id: pnpm-cache
         uses: pnpm/action-setup@v2
         with:
           version: 7
           run_install: false
+
+      - name: Get pnpm store directory
+        id: pnpm-cache
         shell: bash
-        run: |
-          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+        run: echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
 
       - uses: actions/cache@v3
-        name: Use cached pnpm
+        name: Setup pnpm cache
         with:
-          path: |
-            ~/.npm
-            ${{ github.workspace }}/apps/website/.next/cache
-            ${{ steps.pnpm-cache.outputs.STORE_PATH }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
-            ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}-
             ${{ runner.os }}-pnpm-store-
 
-      - if: ${{ steps.cache-pnpm.outputs.cache-hit != 'true' }}
-        name: Install dependencies and build website
+      - name: Install dependencies and build website
         run: |
           pnpm install --frozen-lockfile
           pnpm run build
