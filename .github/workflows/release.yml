@@ -114,7 +114,7 @@ jobs:
           name: website-artifact ${{ matrix.node-version }}
           path: apps/website/.next
           if-no-files-found: error
-          retention-days: 30
+          retention-days: 1
 
       - name: Configure Github Pages
         run: |
