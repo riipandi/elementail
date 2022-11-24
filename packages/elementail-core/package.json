@@ -14,7 +14,9 @@
     "dist/**"
   ],
   "scripts": {
-    "build": "tsup src/index.tsx --format esm,cjs --dts --external react && tailwindcss -i ./src/styles.css -o ./dist/styles.css",
+    "build": "pnpm run build:lib && pnpm run build:css",
+    "build:lib": "tsup src/index.tsx --format esm,cjs --dts --external react",
+    "build:css": "pnpm tailwindcss -i ./src/styles.css -o ./dist/styles.css",
     "dev": "concurrently \"tsup src/index.tsx --format esm,cjs --dts --external react --watch\" \"tailwindcss -i ./src/styles.css -o ./dist/styles.css --watch\"",
     "lint": "TIMING=1 eslint \"src/**/*.ts*\"",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
