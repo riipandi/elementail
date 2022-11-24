@@ -111,9 +111,10 @@ jobs:
       - name: Save Next.js artifact
         uses: actions/upload-artifact@v3
         with:
-          name: website-artifact
+          name: website-artifact ${{ matrix.node-version }}
           path: apps/website/.next
           if-no-files-found: error
+          retention-days: 30
 
       - name: Configure Github Pages
         run: |
