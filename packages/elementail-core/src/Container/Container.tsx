@@ -4,7 +4,7 @@ export interface ContainerProps {
 }
 
 export function Container(props: ContainerProps) {
-  return <div className={props.className || 'flex flex-col p-2 border'}>{props.children}</div>
+  return <div className={props.className || 'flex flex-col border p-2'}>{props.children}</div>
 }
 
 Container.displayName = 'Container'
