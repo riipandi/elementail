@@ -4,7 +4,7 @@ module.exports = {
   content: [
     `stories/**/*.{js,ts,jsx,tsx,mdx}`,
     // include packages if not transpiling
-    '../../packages/**/*.{js,ts,jsx,tsx}'
+    // '../../packages/**/*.{js,ts,jsx,tsx}'
   ],
   theme: {
     extend: {
