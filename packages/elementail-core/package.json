@@ -23,7 +23,7 @@
     "*.js"
   ],
   "scripts": {
-    "build": "pnpm run build:lib && pnpm run build:css",
+    "build": "pnpm build:lib && pnpm build:css",
     "build:lib": "tsup src/index.tsx --format esm,cjs --dts --external react",
     "build:css": "tailwindcss -i ./src/styles.css -o ./dist/styles.css",
     "dev": "concurrently \"tsup src/index.tsx --format esm,cjs --dts --external react --watch\" \"tailwindcss -i ./src/styles.css -o ./dist/styles.css --watch\"",

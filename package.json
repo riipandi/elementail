@@ -21,6 +21,8 @@
     "@changesets/cli": "^2.25.2",
     "@elementail/eslint-config": "workspace:*",
     "eslint": "^8.28.0",
+    "husky": "^8.0.2",
+    "lint-staged": "^13.0.3",
     "prettier": "^2.8.0",
     "turbo": "^1.6.3"
   },
