@@ -7,9 +7,6 @@ on:
   pull_request:
     types: [opened, synchronize]
 
-jobs:
-# The list of jobs and steps
-
 # Cancel in progress workflows on pull_requests.
 # https://docs.github.com/en/actions/using-jobs/using-concurrency#example-using-a-fallback-value
 concurrency:
