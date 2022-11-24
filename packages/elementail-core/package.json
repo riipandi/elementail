@@ -11,7 +11,7 @@
   "exports": {
     ".": "./dist",
     "./styles.css": "./dist/styles.css",
-    "./tailwind.config": "./tailwind.config.js",
+    "./tailwind.config": "./tailwind.config.cjs",
     "./tailwind.css": "./tailwind.css"
   },
   "sideEffects": false,

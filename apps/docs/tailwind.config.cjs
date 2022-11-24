@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  presets: [require('../../packages/elementail-core/tailwind.config.js')],
+  presets: [require('../../packages/elementail-core/tailwind.config.cjs')],
   content: [
     `stories/**/*.{js,ts,jsx,tsx,mdx}`,
     // include packages if not transpiling
