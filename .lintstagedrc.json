@@ -1,5 +1,5 @@
 {
-  "*.@(ts|tsx|js|jsx|mdx)": ["pnpm format"],
+  "*.@(ts|tsx|js|jsx|mdx)": ["pnpm lint"],
   "*.json": ["pnpm format"],
   "*.*rc": ["pnpm format --parser json"],
   "*.@(css|scss)": ["pnpm format"]
