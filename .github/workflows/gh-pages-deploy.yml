@@ -3,6 +3,7 @@ name: CI
 on:
   push:
     branches: [main]
+
 # Cancel in progress workflows on pull_requests.
 # https://docs.github.com/en/actions/using-jobs/using-concurrency#example-using-a-fallback-value
 concurrency:
@@ -13,37 +14,40 @@ jobs:
   build-website:
     runs-on: ubuntu-latest
 
-    # strategy:
-    #   matrix:
-    #     node-version: [16.x]
+    strategy:
+      matrix:
+        node-version: [16.x]
 
     steps:
       - uses: actions/checkout@v3
 
-      # - name: Use Node.js ${{ matrix.node-version }}
-      #   uses: actions/setup-node@v3
-      #   with:
-      #     node-version: ${{ matrix.node-version }}
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
 
-      uses: actions/cache@v3
-      with:
-        # See here for caching with `yarn` https://github.com/actions/cache/blob/main/examples.md#node---yarn or you can leverage caching with actions/setup-node https://github.com/actions/setup-node
-        path: |
-          ~/.npm
-          ${{ github.workspace }}/apps/website/.next/cache
-        # Generate a new cache whenever packages or source files change.
-        key: ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
-        # If source files changed but packages didn't, rebuild from a prior cache.
-        restore-keys: |
-          ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml') }}-
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7
+          run_install: false
 
-      - name: Run PNPM action
-        uses: ./.github/pnpm-action
+      - name: Get PNPM directory
+        id: pnpm-cache
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+      - uses: actions/cache@v3
+        name: Use cached pnpm
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
 
       - if: ${{ steps.cache-pnpm.outputs.cache-hit != 'true' }}
         name: Deps install and build
-        env:
-          NEXT_TELEMETRY_DISABLED: 1
         run: |
           pnpm install
           pnpm export
