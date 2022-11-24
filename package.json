@@ -6,7 +6,7 @@
     "url": "https://github.com/riipandi/elementail"
   },
   "scripts": {
-    "build": "turbo run build",
+    "build": "turbo run build --filter=!./examples/*",
     "dev": "turbo run dev --no-cache --parallel --continue",
     "export": "turbo run export --filter=website... --filter=docs...",
     "clean": "turbo run clean && rm -rf node_modules",
