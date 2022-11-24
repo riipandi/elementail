@@ -1,5 +1,5 @@
 {
-  "name": "eslint-config-elementail",
+  "name": "@elementail/eslint-config",
   "description": "ESLint preset used throughout the monorepo",
   "version": "0.1.0",
   "main": "index.js",

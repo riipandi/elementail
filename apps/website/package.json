@@ -1,5 +1,5 @@
 {
-    "name": "website",
+    "name": "@elementail/website",
     "version": "0.1.0",
     "private": true,
     "scripts": {
@@ -24,7 +24,7 @@
         "@types/react-dom": "^18.0.9",
         "@types/react": "^18.0.25",
         "autoprefixer": "^10.4.13",
-        "eslint-config-elementail": "workspace:*",
+        "@elementail/eslint-config": "workspace:*",
         "postcss": "^8.4.19",
         "tailwind-config": "workspace:*",
         "tailwindcss": "^3.2.4",
