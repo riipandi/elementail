@@ -20,7 +20,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
@@ -39,29 +38,22 @@ jobs:
           echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
 
       - uses: actions/cache@v3
-        id: cache-pnpm
         name: Use cached pnpm
-        with:
-          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
-
-      - if: ${{ steps.cache-pnpm.outputs.cache-hit != 'true' }}
-        name: Deps install and build
-        run: |
-          pnpm install --frozen-lockfile
-
-      - uses: actions/cache@v3
-        id: cache-nextjs
-        name: Use cached Next.js
         with:
           path: |
             ~/.npm
             ${{ github.workspace }}/apps/website/.next/cache
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
+            ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
           restore-keys: |
-            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
+            ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}-
+            ${{ runner.os }}-pnpm-store-
+
+      - if: ${{ steps.cache-pnpm.outputs.cache-hit != 'true' }}
+        name: Install dependencies
+        run: |
+          pnpm install --frozen-lockfile
+          pnpm run export
 
       - if: ${{ steps.cache-nextjs.outputs.cache-hit != 'true' }}
         name: Build and export website
