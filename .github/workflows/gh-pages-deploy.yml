@@ -69,10 +69,12 @@ jobs:
           touch ./apps/website/out/.nojekyll
           touch ./apps/website/out/CNAME
           echo 'elementail.js.org' > ./apps/website/out/CNAME
+          cp -r ./apps/docs/storybook-static/* ./apps/website/out/storybook/.
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
+          # ssh-key: ${{ secrets.DEPLOY_KEY }} # ssh-keygen -t rsa -m pem -b 4096 -C "aris@duck.com" -N ""
           token: ${{ secrets.GH_TOKEN }} # This option defaults to the repository scoped GitHub Token.
           repository-name: riipandi/elementail # Specify the github repository path.
           branch: gh-pages # The branch the action should deploy to.
