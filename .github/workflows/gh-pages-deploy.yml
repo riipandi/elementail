@@ -10,8 +10,8 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.head_ref || github.run_id }}
   cancel-in-progress: true
 
-# permissions:
-#   contents: write
+permissions:
+  contents: write
 
 jobs:
   build-website:
@@ -30,13 +30,11 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Setup PNPM Package Manager
+        id: pnpm-cache
         uses: pnpm/action-setup@v2
         with:
           version: 7
           run_install: false
-
-      - name: Setup PNPM Cache Directory
-        id: pnpm-cache
         shell: bash
         run: |
           echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
