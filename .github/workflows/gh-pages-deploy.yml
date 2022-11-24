@@ -57,7 +57,6 @@ jobs:
         name: Install dependencies
         run: |
           pnpm install --frozen-lockfile
-          pnpm run build
           pnpm run export
 
       - if: ${{ steps.cache-nextjs.outputs.cache-hit != 'true' }}
