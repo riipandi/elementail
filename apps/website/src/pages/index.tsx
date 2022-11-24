@@ -20,7 +20,11 @@ export default function Home() {
         </h1>
         <div className='mx-auto mt-8 max-w-xl sm:flex sm:justify-center md:mt-12 lg:mt-16'>
           <div className='flex space-x-4'>
-            <Link href='https://github.com/riipandi/elementail'>
+            <Link
+              href='https://main--636de6ec6d246e2740322b9e.chromatic.com'
+              target='_blank'
+              rel='noreferrer noopener'
+            >
               <button className='flex w-full items-center justify-center rounded-md border border-transparent bg-black px-8 py-3 text-base font-medium text-white no-underline hover:bg-gray-700 dark:bg-white dark:text-black dark:hover:bg-gray-300 md:py-3 md:px-10 md:text-lg md:leading-6'>
                 Read the docs
                 <span className='from-secondary-500 to-primary-500 ml-2 bg-gradient-to-r bg-clip-text text-transparent'>
@@ -28,15 +32,7 @@ export default function Home() {
                 </span>
               </button>
             </Link>
-            <Link href='https://main--636de6ec6d246e2740322b9e.chromatic.com/'>
-              <button className='flex w-full items-center justify-center rounded-md border border-transparent bg-black px-8 py-3 text-base font-medium text-white no-underline hover:bg-gray-700 dark:bg-white dark:text-black dark:hover:bg-gray-300 md:py-3 md:px-10 md:text-lg md:leading-6'>
-                Storybook
-                <span className='from-secondary-500 to-primary-500 ml-2 bg-gradient-to-r bg-clip-text text-transparent'>
-                  →
-                </span>
-              </button>
-            </Link>
-            <Button variant='primary'>Example Button</Button>
+            <Button>Example Button</Button>
           </div>
         </div>
       </main>

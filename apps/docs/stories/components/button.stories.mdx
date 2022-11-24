@@ -1,52 +1,50 @@
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
 import { BADGE } from '@geometricpanda/storybook-addon-badges'
-import { Button } from '@elementail/core'
+import { Button, ButtonGroup } from '@elementail/core'
 
-<Meta
-  title='Components/Button'
-  component={Button}
-  argTypes={{
-    variant: {
-      options: ['default', 'primary', 'secondary'],
-      control: { type: 'select', sort: 'requiredFirst' }
-    }
-  }}
-/>
+<Meta title='Components/Button' component={[Button, ButtonGroup]} />
 
-export const Template = (args) => <Button {...args}>Button</Button>
+export const ButtonStory = (args) => <Button {...args}>Button</Button>
+export const ButtonGroupStory = (args) => <ButtonGroup {...args} />
 
 # Button
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget consectetur tempor, nisl nunc egestas nisi.
 
+## Buttons
+
 ```jsx
 import { Button } from '@elementail/core'
 ```
 
-## Props
+<Canvas columns={2} withSource='close'>
+  <Story
+    name='Buttons'
+    argTypes={{
+      variant: {
+        options: ['default', 'primary', 'secondary'],
+        control: { type: 'select', sort: 'requiredFirst' }
+      }
+    }}
+    parameters={{ badges: ['core', BADGE.STABLE] }}
+    args={{ variant: 'primary' }}
+  >
+    {ButtonStory.bind({})}
+  </Story>
+</Canvas>
 
 <ArgsTable of={Button} />
 
-## Primary Button
+## Button Groups
+
+```jsx
+import { ButtonGroup } from '@elementail/core'
+```
 
 <Canvas columns={2} withSource='close'>
-  <Story
-    name='Primary Button'
-    args={{ variant: 'primary' }}
-    parameters={{ badges: ['core', BADGE.STABLE] }}
-  >
-    {Template.bind({})}
+  <Story name='Button Groups' parameters={{ badges: ['core', BADGE.BETA] }}>
+    {ButtonGroupStory.bind({})}
   </Story>
 </Canvas>
 
-## Secondary Button
-
-<Canvas columns={2} withSource='close'>
-  <Story
-    name='Secondary Button'
-    args={{ variant: 'secondary' }}
-    parameters={{ badges: ['core', BADGE.BETA] }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
+<ArgsTable of={ButtonGroup} />
