@@ -30,6 +30,11 @@
     "lint": "TIMING=1 eslint \"src/**/*.ts*\"",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
+  "dependencies": {
+    "@radix-ui/colors": "^0.1.8",
+    "@radix-ui/react-avatar": "^1.0.1",
+    "react-icons": "^4.6.0"
+  },
   "devDependencies": {
     "@elementail/eslint-config": "workspace:*",
     "@tailwindcss/aspect-ratio": "^0.4.2",
@@ -48,8 +53,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "dependencies": {
-    "react-icons": "^4.6.0"
   }
 }

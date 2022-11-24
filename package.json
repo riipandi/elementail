@@ -7,8 +7,8 @@
   },
   "scripts": {
     "build": "turbo run build --filter=!./examples/*",
-    "dev": "turbo run dev --no-cache --parallel --continue",
-    "export": "turbo run export --filter=website... --filter=docs...",
+    "dev": "turbo run dev --no-cache --parallel --continue --filter=!./examples/*",
+    "export": "turbo run export --filter=website... --filter=docs... --filter=!./examples/*",
     "clean": "turbo run clean && rm -rf node_modules",
     "format": "prettier --write \"**/*.{ts,tsx,md,mdx}\"",
     "lint": "turbo run lint --filter=!./examples/*",
