@@ -1,5 +1,5 @@
-import '../styles/globals.css'
 import { addParameters } from '@storybook/react';
+import '@elementail/core/tailwind.css'
 
 addParameters({
   badgesConfig: {

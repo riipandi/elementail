@@ -40,7 +40,6 @@ importers:
       react: ^18.2.0
       react-dom: ^18.2.0
       serve: ^14.1.2
-      tailwind-config: workspace:*
       tailwindcss: ^3.2.4
       tsconfig: workspace:*
       typescript: ^4.9.3
@@ -69,7 +68,6 @@ importers:
       chromatic: 6.11.4
       postcss: 8.4.19
       serve: 14.1.2
-      tailwind-config: link:../../packages/tailwind-config
       tailwindcss: 3.2.4_postcss@8.4.19
       tsconfig: link:../../packages/tsconfig
       typescript: 4.9.3
@@ -92,7 +90,6 @@ importers:
       postcss: ^8.4.19
       react: ^18.2.0
       react-dom: ^18.2.0
-      tailwind-config: workspace:*
       tailwindcss: ^3.2.4
       tsconfig: workspace:*
       typescript: ^4.9.3
@@ -113,7 +110,6 @@ importers:
       '@types/react-dom': 18.0.9
       autoprefixer: 10.4.13_postcss@8.4.19
       postcss: 8.4.19
-      tailwind-config: link:../../packages/tailwind-config
       tailwindcss: 3.2.4_postcss@8.4.19
       tsconfig: link:../../packages/tsconfig
       typescript: 4.9.3
@@ -130,7 +126,6 @@ importers:
       concurrently: ^7.6.0
       eslint: ^8.28.0
       react: ^18.2.0
-      tailwind-config: workspace:*
       tailwindcss: ^3.2.4
       tsconfig: workspace:*
       tsup: ^6.5.0
@@ -146,7 +141,6 @@ importers:
       concurrently: 7.6.0
       eslint: 8.28.0
       react: 18.2.0
-      tailwind-config: link:../tailwind-config
       tailwindcss: 3.2.4_postcss@8.4.19
       tsconfig: link:../tsconfig
       tsup: 6.5.0_idbjo54bpfgfu5hzy4ncsoa6f4

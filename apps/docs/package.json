@@ -33,7 +33,6 @@
     "@elementail/eslint-config": "workspace:*",
     "postcss": "^8.4.19",
     "serve": "^14.1.2",
-    "tailwind-config": "workspace:*",
     "tailwindcss": "^3.2.4",
     "tsconfig": "workspace:*",
     "typescript": "^4.9.3",
