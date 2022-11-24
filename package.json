@@ -13,10 +13,10 @@
     "release": "turbo run build --filter=docs^... && changeset publish"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.22.0",
-    "eslint-config-elementail": "workspace:*",
-    "eslint": "^8.15.0",
-    "prettier": "^2.5.1",
+    "@changesets/cli": "^2.25.2",
+    "eslint-elementail": "workspace:*",
+    "eslint": "^8.28.0",
+    "prettier": "^2.8.0",
     "turbo": "^1.6.3"
   },
   "packageManager": "pnpm@7.15.0"

@@ -24,7 +24,7 @@
         "@types/react-dom": "^18.0.7",
         "@types/react": "^18.0.22",
         "autoprefixer": "^10.4.0",
-        "eslint-config-elementail": "workspace:*",
+        "eslint-elementail": "workspace:*",
         "postcss": "^8.4.4",
         "tailwind-config": "workspace:*",
         "tailwindcss": "^3.1.4",

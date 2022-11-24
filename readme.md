@@ -26,7 +26,7 @@ pnpm lint          # Lint all packages
 pnpm changeset     # Generate a changeset
 ```
 
-Command `pnpm clean` will clean up all `node_modules` and `dist` folders (runs each package's clean script)
+Command `pnpm clean` will clean up all `node_modules` and `dist` folders (runs each package's clean script).
 
 ## Turborepo
 
@@ -40,10 +40,9 @@ This Turborepo includes the following packages and applications:
 
 -   `apps/docs`: Component documentation site with Storybook
 -   `apps/website`: Marketing site of the project build with Next.js
--   `packages/@elementail/core`: Core React components
+-   `packages/@elementail/hooks`: Core React components
 -   `packages/@elementail/utils`: Shared React utilities
--   `packages/tsconfig`: Shared `tsconfig.json`s used throughout the Turborepo
--   `packages/eslint-config-elementail`: ESLint preset
+-   `packages/shared-config`: Shared config and ESLint preset used throughout the Turborepo
 
 Each package and app is 100% [TypeScript](https://www.typescriptlang.org/). Yarn Workspaces enables us to "hoist" dependencies that are shared between packages to the root `package.json`. This means smaller `node_modules` folders and a better local dev experience. To install a dependency for the entire monorepo, use the `-W` workspaces flag with `yarn add`.
 
@@ -65,7 +64,7 @@ tsup src/index.tsx --format esm,cjs --dts --external react
 
 ```json:elementail-core/package.json
 {
-  "name": "@elementail/core",
+  "name": "@elementail/hooks",
   "version": "0.1.0",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",

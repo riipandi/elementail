@@ -7,10 +7,11 @@
 out/
 dist/
 dist-ssr/
-tsconfig.json
-pnpm-lock.yaml
+# tsconfig.json
+# tsconfig-*.json
+# package.json
 package-lock.json
-package.json
-public/
+pnpm-lock.yaml
 yarn.lock
+public/
 *.md
