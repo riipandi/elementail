@@ -6,13 +6,13 @@ importers:
     specifiers:
       '@changesets/cli': ^2.25.2
       eslint: ^8.28.0
-      eslint-elementail: workspace:*
+      eslint-config-elementail: workspace:*
       prettier: ^2.8.0
       turbo: ^1.6.3
     devDependencies:
       '@changesets/cli': 2.25.2
       eslint: 8.28.0
-      eslint-elementail: link:packages/eslint-elementail
+      eslint-config-elementail: link:packages/eslint-elementail
       prettier: 2.8.0
       turbo: 1.6.3
 
@@ -26,7 +26,7 @@ importers:
       '@storybook/builder-vite': ^0.1.33
       '@storybook/react': ^6.4.18
       '@vitejs/plugin-react': ^1.3.2
-      eslint-elementail: workspace:*
+      eslint-config-elementail: workspace:*
       react: ^18.0.0
       react-dom: ^18.0.0
       serve: ^13.0.2
@@ -45,7 +45,7 @@ importers:
       '@storybook/builder-vite': 0.1.41_4u6swuhpc4ee5mcch35iehngou
       '@storybook/react': 6.5.13_tih6gckf2mq5jdskrf4rcfvxee
       '@vitejs/plugin-react': 1.3.2
-      eslint-elementail: link:../../packages/eslint-elementail
+      eslint-config-elementail: link:../../packages/eslint-elementail
       serve: 13.0.4
       tsconfig: link:../../packages/tsconfig
       typescript: 4.9.3
@@ -53,6 +53,7 @@ importers:
 
   apps/website:
     specifiers:
+      '@elementail/core': workspace:*
       '@tailwindcss/aspect-ratio': ^0.4.2
       '@tailwindcss/forms': ^0.5.3
       '@tailwindcss/line-clamp': ^0.4.2
@@ -61,7 +62,7 @@ importers:
       '@types/react': ^18.0.22
       '@types/react-dom': ^18.0.7
       autoprefixer: ^10.4.0
-      eslint-elementail: workspace:*
+      eslint-config-elementail: workspace:*
       next: ^13.0.5
       postcss: ^8.4.4
       react: ^18.2.0
@@ -72,6 +73,7 @@ importers:
       typescript: ^4.5.3
       ui: workspace:*
     dependencies:
+      '@elementail/core': link:../../packages/elementail-core
       next: 13.0.5_biqbaboplfbrettd7655fr4n2y
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -85,7 +87,7 @@ importers:
       '@types/react': 18.0.25
       '@types/react-dom': 18.0.9
       autoprefixer: 10.4.13_postcss@8.4.19
-      eslint-elementail: link:../../packages/eslint-elementail
+      eslint-config-elementail: link:../../packages/eslint-elementail
       postcss: 8.4.19
       tailwind-config: link:../../packages/tailwind-config
       tailwindcss: 3.2.4_postcss@8.4.19
@@ -97,7 +99,7 @@ importers:
       '@types/react': ^18.0.9
       '@types/react-dom': ^18.0.4
       eslint: ^8.15.0
-      eslint-elementail: workspace:*
+      eslint-config-elementail: workspace:*
       react: ^18.1.0
       tsconfig: workspace:*
       tsup: ^5.10.1
@@ -106,7 +108,7 @@ importers:
       '@types/react': 18.0.25
       '@types/react-dom': 18.0.9
       eslint: 8.28.0
-      eslint-elementail: link:../eslint-elementail
+      eslint-config-elementail: link:../eslint-elementail
       react: 18.2.0
       tsconfig: link:../tsconfig
       tsup: 5.12.9_typescript@4.9.3
@@ -117,7 +119,7 @@ importers:
       '@types/react': ^18.0.9
       '@types/react-dom': ^18.0.4
       eslint: ^8.15.0
-      eslint-elementail: workspace:*
+      eslint-config-elementail: workspace:*
       react: ^18.1.0
       tsconfig: workspace:*
       tsup: ^5.10.1
@@ -126,7 +128,7 @@ importers:
       '@types/react': 18.0.25
       '@types/react-dom': 18.0.9
       eslint: 8.28.0
-      eslint-elementail: link:../eslint-elementail
+      eslint-config-elementail: link:../eslint-elementail
       react: 18.2.0
       tsconfig: link:../tsconfig
       tsup: 5.12.9_typescript@4.9.3
@@ -171,7 +173,7 @@ importers:
       '@types/react-dom': ^17.0.11
       concurrently: ^7.2.2
       eslint: ^7.32.0
-      eslint-elementail: workspace:*
+      eslint-config-elementail: workspace:*
       react: ^18.2.0
       tailwind-config: workspace:*
       tailwindcss: ^3.1.4
@@ -187,7 +189,7 @@ importers:
       '@types/react-dom': 17.0.18
       concurrently: 7.6.0
       eslint: 7.32.0
-      eslint-elementail: link:../eslint-elementail
+      eslint-config-elementail: link:../eslint-elementail
       react: 18.2.0
       tailwind-config: link:../tailwind-config
       tailwindcss: 3.2.4_postcss@8.4.19
