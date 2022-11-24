@@ -3,7 +3,6 @@ name: Publish Website
 on:
   push:
     branches: ['main']
-    branches-ignore: ['develop']
   pull_request:
     types: [opened, synchronize]
 
