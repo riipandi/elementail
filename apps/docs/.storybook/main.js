@@ -5,6 +5,7 @@ module.exports = {
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
+    '@storybook/addon-a11y',
     {
       name: '@storybook/addon-postcss',
       options: {
@@ -12,7 +13,8 @@ module.exports = {
           implementation: require('postcss')
         }
       }
-    }
+    },
+    '@geometricpanda/storybook-addon-badges'
   ],
   framework: '@storybook/react',
   core: {

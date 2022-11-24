@@ -1,0 +1,44 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
+import { BADGE } from '@geometricpanda/storybook-addon-badges'
+import { Button } from '@elementail/core'
+
+<Meta
+  title='Components/Button'
+  component={Button}
+  argTypes={{
+    variant: {
+      options: ['default', 'primary', 'secondary'],
+      control: { type: 'select', sort: 'requiredFirst' }
+    }
+  }}
+/>
+
+export const Template = (args) => <Button {...args}>Button</Button>
+
+# Button
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget consectetur tempor, nisl nunc egestas nisi.
+
+```jsx
+import { Button } from '@elementail/core'
+```
+
+## Props
+
+<ArgsTable of={Button} />
+
+## Primary Button
+
+<Canvas columns={2} withSource='close'>
+  <Story name='Primary Button' args={{ variant: 'primary' }} parameters={{ badges: ['core', BADGE.STABLE] }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Secondary Button
+
+<Canvas columns={2} withSource='close'>
+  <Story name='Secondary Button' args={{ variant: 'secondary' }} parameters={{ badges: ['core',BADGE.BETA] }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>

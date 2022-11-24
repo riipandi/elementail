@@ -3,8 +3,12 @@ name: Publish Website
 on:
   push:
     branches: ['main']
+    branches-ignore: ['develop']
   pull_request:
     types: [opened, synchronize]
+
+jobs:
+# The list of jobs and steps
 
 # Cancel in progress workflows on pull_requests.
 # https://docs.github.com/en/actions/using-jobs/using-concurrency#example-using-a-fallback-value
@@ -80,7 +84,7 @@ jobs:
           echo 'elementail.js.org' > ./apps/website/out/CNAME
           mv ./apps/docs/storybook-static ./apps/website/out/storybook
 
-      - name: Deploy 🚀
+      - name: Deploy website 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           # ssh-key: ${{ secrets.DEPLOY_KEY }} # ssh-keygen -t rsa -m pem -b 4096 -C "aris@duck.com" -N ""
@@ -89,3 +93,14 @@ jobs:
           branch: gh-pages # The branch the action should deploy to.
           folder: apps/website/out # The folder the action should deploy.
           silent: true
+
+      - name: Deploy Storybook 🚀
+        uses: chromaui/action@v1
+        env:
+          CHROMATIC_RETRIES: 2
+          LOG_LEVEL: 'error'
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          token: ${{ secrets.GH_TOKEN }}
+          workingDir: apps/docs
+          # storybookBuildDir:

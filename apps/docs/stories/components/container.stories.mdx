@@ -1,0 +1,31 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
+import { Container } from '@elementail/core'
+
+<Meta
+  title='Components/Container'
+  component={Container}
+  argTypes={{
+    variant: {
+      options: ['default', 'primary', 'secondary'],
+      control: { type: 'select', sort: 'requiredFirst' }
+    }
+  }}
+/>
+
+export const Template = (args) => <Container {...args}>Container</Container>
+
+# Container
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget consectetur tempor, nisl nunc egestas nisi.
+
+## Props
+
+<ArgsTable of={Container} />
+
+## Examples
+
+<Canvas columns={2} withSource='open'>
+  <Story name='Default' args={{ variant: 'primary' }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
