@@ -6,14 +6,14 @@ body:
       value: |
         Thank you for reporting an issue :pray:.
 
-        This issue tracker is for reporting reproducible bugs or regression's found in [storybook-addon-next](https://github.com/riipandi/elementail)
+        This issue tracker is for reporting reproducible bugs or regression's found in [elementail](https://github.com/riipandi/elementail)
         If you have a question about how to achieve something and are struggling, please post a question
-        inside of storybook-addon-next's [Discussions tab](https://github.com/riipandi/elementail/discussions)
+        inside of elementail's [Discussions tab](https://github.com/riipandi/elementail/discussions)
 
         Before submitting a new bug/issue, please check the links below to see if there is a solution or question posted there already:
-         - storybook-addon-next's [Discussions tab](https://github.com/riipandi/elementail/discussions)
-         - storybook-addon-next's [Open Issues](https://github.com/riipandi/elementail/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc)
-         - storybook-addon-next's [Closed Issues](https://github.com/riipandi/elementail/issues?q=is%3Aissue+sort%3Aupdated-desc+is%3Aclosed)
+         - elementail's [Discussions tab](https://github.com/riipandi/elementail/discussions)
+         - elementail's [Open Issues](https://github.com/riipandi/elementail/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc)
+         - elementail's [Closed Issues](https://github.com/riipandi/elementail/issues?q=is%3Aissue+sort%3Aupdated-desc+is%3Aclosed)
 
         The more information you fill in, the better the community can help you.
   - type: textarea
@@ -35,8 +35,7 @@ body:
         - Please make sure the example is complete and runnable
         - Feel free to fork any of the official CodeSandbox examples to reproduce your issue: https://github.com/riipandi/elementail/tree/main/examples/nextv12
         - Please read these tips for providing a minimal example: https://stackoverflow.com/help/mcve.
-      placeholder: |
-        e.g. Code Sandbox, Stackblitz, or Expo Snack
+      placeholder: e.g. Code Sandbox or Stackblitz
     validations:
       required: true
   - type: textarea
@@ -95,9 +94,9 @@ body:
   - type: input
     id: rq-version
     attributes:
-      label: storybook-addon-next version
+      label: elementail version
       description: |
-        Please let us know the exact version of storybook-addon-next you were using when the issue occurred. Please don't just put in "latest", as this is subject to change.
+        Please let us know the exact version of elementail you were using when the issue occurred. Please don't just put in "latest", as this is subject to change.
       placeholder: |
         e.g. v1.3.1
     validations:
