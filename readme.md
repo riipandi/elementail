@@ -40,11 +40,12 @@ This Turborepo includes the following packages and applications:
 
 -   `apps/docs`: Component documentation site with Storybook
 -   `apps/website`: Marketing site of the project build with Next.js
--   `packages/@elementail/hooks`: Core React components
+-   `packages/@elementail/core`: Core React components
+-   `packages/@elementail/hooks`: Hooks React components
 -   `packages/@elementail/utils`: Shared React utilities
 -   `packages/shared-config`: Shared config and ESLint preset used throughout the Turborepo
 
-Each package and app is 100% [TypeScript](https://www.typescriptlang.org/). Yarn Workspaces enables us to "hoist" dependencies that are shared between packages to the root `package.json`. This means smaller `node_modules` folders and a better local dev experience. To install a dependency for the entire monorepo, use the `-W` workspaces flag with `yarn add`.
+Each package and app is 100% [TypeScript](https://www.typescriptlang.org/). Yarn Workspaces enables us to "hoist" dependencies that are shared between packages to the root `package.json`. This means smaller `node_modules` folders and a better local dev experience. To install a dependency for the entire monorepo, use the `-W` workspaces flag with `pnpm add`.
 
 This example sets up your `.gitignore` to exclude all generated files, other folders like `node_modules` used to store your dependencies.
 
@@ -52,7 +53,7 @@ This example sets up your `.gitignore` to exclude all generated files, other fol
 
 To make the core library code work across all browsers, we need to compile the raw TypeScript and React code to plain JavaScript. We can accomplish this with `tsup`, which uses `esbuild` to greatly improve performance.
 
-Running `yarn build` from the root of the Turborepo will run the `build` command defined in each package's `package.json` file. Turborepo runs each `build` in parallel and caches & hashes the output to speed up future builds.
+Running `pnpm build` from the root of the Turborepo will run the `build` command defined in each package's `package.json` file. Turborepo runs each `build` in parallel and caches & hashes the output to speed up future builds.
 
 For `elementail-core`, the `build` command is the following:
 
@@ -73,7 +74,7 @@ tsup src/index.tsx --format esm,cjs --dts --external react
 }
 ```
 
-Run `yarn build` to confirm compilation is working correctly. You should see a folder `elementail-core/dist` which contains the compiled output.
+Run `pnpm build` to confirm compilation is working correctly. You should see a folder `elementail-core/dist` which contains the compiled output.
 
 ```bash
 elementail-core
@@ -145,9 +146,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl ege
 
 This example includes a few helpful Storybook scripts:
 
--   `yarn dev`: Starts Storybook in dev mode with hot reloading at `localhost:4400`
--   `yarn build`: Builds the Storybook UI and generates the static HTML files
--   `yarn preview-storybook`: Starts a local server to view the generated Storybook UI
+-   `pnpm dev`: Starts Storybook in dev mode with hot reloading at `localhost:4400`
+-   `pnpm build`: Builds the Storybook UI and generates the static HTML files
+-   `pnpm preview-storybook`: Starts a local server to view the generated Storybook UI
 
 ## Versioning & Publishing Packages
 
@@ -157,7 +158,7 @@ You'll need to create an `NPM_TOKEN` and `GITHUB_TOKEN` and add it to your GitHu
 
 ### Generating the Changelog
 
-To generate your changelog, run `yarn changeset` locally:
+To generate your changelog, run `pnpm changeset` locally:
 
 1. **Which packages would you like to include?** – This shows which packages and changed and which have remained the same. By default, no packages are included. Press `space` to select the packages you want to include in the `changeset`.
 1. **Which packages should have a major bump?** – Press `space` to select the packages you want to bump versions for.
@@ -178,7 +179,7 @@ Turborepo runs the `build` script for all publishable packages (excluding docs) 
 
 -   Rename folders in `packages/*` to replace `elementail` with your desired scope
 -   Search and replace `elementail` with your desired scope
--   Re-run `yarn install`
+-   Re-run `pnpm install`
 
 To publish packages to a private npm organization scope, **remove** the following from each of the `package.json`'s
 

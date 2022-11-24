@@ -28,6 +28,14 @@ module.exports = {
           {
             find: '@elementail/core',
             replacement: path.resolve(__dirname, '../../../packages/elementail-core/')
+          },
+          {
+            find: '@elementail/hooks',
+            replacement: path.resolve(__dirname, '../../../packages/elementail-hooks/')
+          },
+          {
+            find: '@elementail/utils',
+            replacement: path.resolve(__dirname, '../../../packages/elementail-utils/')
           }
         ]
       }
