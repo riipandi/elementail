@@ -4,7 +4,7 @@
  * @param {string} str The string to be slugified
  * @return {string} The slugified string.
  */
-export function toSlug(str: string): string {
+export function slugify(str: string): string {
   let s = str
   if (!s) {
     return ''

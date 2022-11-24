@@ -1,3 +1,2 @@
-export { toSlug } from './toSlug'
-export { useIsomorphicLayoutEffect } from './useIsomorphicLayoutEffect'
-export { usePrevious } from './usePrevious'
+export { useIsomorphicLayoutEffect } from './hooks/useIsomorphicLayoutEffect'
+export { usePrevious } from './hooks/usePrevious'
