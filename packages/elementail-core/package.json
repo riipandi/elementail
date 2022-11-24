@@ -31,14 +31,14 @@
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "devDependencies": {
+    "@elementail/eslint-config": "workspace:*",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/forms": "^0.5.3",
     "@tailwindcss/line-clamp": "^0.4.2",
     "@tailwindcss/typography": "^0.5.8",
-    "@types/react-dom": "^18.0.9",
     "@types/react": "^18.0.25",
+    "@types/react-dom": "^18.0.9",
     "concurrently": "^7.6.0",
-    "@elementail/eslint-config": "workspace:*",
     "eslint": "^8.28.0",
     "react": "^18.2.0",
     "tailwindcss": "^3.2.4",
@@ -48,5 +48,8 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "react-icons": "^4.6.0"
   }
 }

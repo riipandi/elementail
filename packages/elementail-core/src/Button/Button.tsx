@@ -1,3 +1,5 @@
+import { FaCloudflare } from 'react-icons/fa'
+
 export interface ButtonProps {
   children: React.ReactNode
   variant?: 'primary' | 'secondary'
@@ -17,6 +19,7 @@ export function Button({ variant = 'primary', ...props }: ButtonProps) {
       className={variant === 'secondary' ? secondaryStyle : primaryStyle}
       {...props}
     >
+      <FaCloudflare size={16} className='mr-2 -ml-1' />
       {props.children}
     </button>
   )
