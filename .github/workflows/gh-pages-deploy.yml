@@ -8,40 +8,32 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [14.x]
+    # strategy:
+    #   matrix:
+    #     node-version: [16.x]
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
-        with:
-          node-version: ${{ matrix.node-version }}
+      # - name: Use Node.js ${{ matrix.node-version }}
+      #   uses: actions/setup-node@v3
+      #   with:
+      #     node-version: ${{ matrix.node-version }}
 
-      - uses: actions/cache@v2
-        with:
-          path: ${{ github.workspace }}/.next/cache
-          key: ${{ runner.os }}-nextjs-v${{ secrets.BUILD_CACHE_VERSION }}-${{ hashFiles('**/yarn.lock') }}
+      - name: Run PNPM action
+        uses: ./.github/pnpm-action
 
-      - name: Pre-Install
-        run: rm -rf node_modules
-
-      - name: Installing the app
-        run: yarn install --frozen-lockfile
-
-      - name: Building the app
-        run: yarn build
-
-      - name: Exporting static version of the app
-        run: yarn export
+      - if: ${{ steps.cache-pnpm.outputs.cache-hit != 'true' }}
+        name: Deps install and build
+        run: |
+          pnpm install
+          pnpm export
 
       - name: Configuring Github Pages
         run: |
-          touch ./out/.nojekyll
-          touch ./out/CNAME
-          echo 'elementail.js.org' > ./out/CNAME
+          touch ./apps/website/out/.nojekyll
+          touch ./apps/website/out/CNAME
+          echo 'elementail.js.org' > ./apps/website/out/CNAME
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.0
@@ -49,4 +41,4 @@ jobs:
           token: ${{ secrets.DEPLOY_TOKEN }} # This option defaults to the repository scoped GitHub Token.
           repository-name: riipandi/elementail # Specify the github repository path.
           branch: gh-pages # The branch the action should deploy to.
-          folder: out # The folder the action should deploy.
+          folder: apps/website/out # The folder the action should deploy.

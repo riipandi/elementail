@@ -6,7 +6,9 @@
 .next/
 out/
 dist/
+dist-ssr/
 tsconfig.json
+pnpm-lock.yaml
 package-lock.json
 package.json
 public/
