@@ -1,10 +1,10 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import { Button, Container } from '@elementail/core'
+// import { Button, Container } from '@elementail/core'
 
 export default function Home() {
   return (
-    <Container>
+    <div className='flex min-h-screen flex-col items-center justify-center py-2'>
       <Head>
         <title>Elementail - Just another UI Kit using Tailwind CSS</title>
         <meta name='description' content='Just another UI Kit using Tailwind CSS' />
@@ -21,16 +21,16 @@ export default function Home() {
         <div className='mx-auto mt-5 max-w-xl sm:flex sm:justify-center md:mt-8'>
           <div className='rounded-md'>
             <Link href='https://github.com/riipandi/elementail'>
-              <Button className='flex w-full items-center justify-center rounded-md border border-transparent bg-black px-8 py-3 text-base font-medium text-white no-underline hover:bg-gray-700 dark:bg-white dark:text-black dark:hover:bg-gray-300 md:py-3 md:px-10 md:text-lg md:leading-6'>
+              <button className='flex w-full items-center justify-center rounded-md border border-transparent bg-black px-8 py-3 text-base font-medium text-white no-underline hover:bg-gray-700 dark:bg-white dark:text-black dark:hover:bg-gray-300 md:py-3 md:px-10 md:text-lg md:leading-6'>
                 Read the docs
                 <span className='ml-2 bg-gradient-to-r from-accent-500 to-brand-500 bg-clip-text text-transparent'>
                   →
                 </span>
-              </Button>
+              </button>
             </Link>
           </div>
         </div>
       </main>
-    </Container>
+    </div>
   )
 }
