@@ -12,6 +12,8 @@ concurrency:
 
 jobs:
   build-website:
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
 
     strategy:
@@ -19,19 +21,20 @@ jobs:
         node-version: [16.x]
 
     steps:
-      - uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Setup Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Setup PNPM
+      - name: Setup PNPM Package Manager
         uses: pnpm/action-setup@v2
         with:
           version: 7
           run_install: false
 
-      - name: Get PNPM directory
+      - name: Setup PNPM Cache Directory
         id: pnpm-cache
         shell: bash
         run: |
@@ -60,14 +63,14 @@ jobs:
         run: |
           pnpm run export
 
-      - name: Configuring Github Pages
+      - name: Configure Github Pages
         run: |
           touch ./apps/website/out/.nojekyll
           touch ./apps/website/out/CNAME
           echo 'elementail.js.org' > ./apps/website/out/CNAME
 
       - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@4.1.0
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
           token: ${{ secrets.DEPLOY_TOKEN }} # This option defaults to the repository scoped GitHub Token.
           repository-name: riipandi/elementail # Specify the github repository path.
