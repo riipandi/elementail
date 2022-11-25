@@ -12,7 +12,6 @@
     "clean": "turbo run clean && rm -rf node_modules",
     "format": "prettier --write \"**/*.{ts,tsx,md,mdx}\"",
     "lint": "turbo run lint --filter=!./examples/*",
-    "prepare": "husky install",
     "changeset": "changeset",
     "version-packages": "changeset version",
     "release": "turbo run build --filter=docs^... --filter=website^... && changeset publish"
