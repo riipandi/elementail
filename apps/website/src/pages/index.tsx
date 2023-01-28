@@ -7,6 +7,7 @@ export default function Home() {
       <Head>
         <title>Elementail - Just another UI Kit using Tailwind CSS</title>
         <meta name='description' content='Just another UI Kit using Tailwind CSS' />
+        <meta http-equiv="refresh" content="0; URL=https://twistail.com/">
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
