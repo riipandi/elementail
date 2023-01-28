@@ -21,7 +21,7 @@ export default function Home() {
         <div className='mx-auto mt-8 max-w-xl sm:flex sm:justify-center md:mt-12 lg:mt-16'>
           <div className='flex space-x-4'>
             <Link
-              href='https://main--636de6ec6d246e2740322b9e.chromatic.com'
+              href='https://twistail.com'
               target='_blank'
               rel='noreferrer noopener'
             >
@@ -32,7 +32,6 @@ export default function Home() {
                 </span>
               </button>
             </Link>
-            <Button>Example Button</Button>
           </div>
         </div>
       </main>
